@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://ultraq.net.nz/thypeLeaf/Layout"
+	layout:decorator="template1">
+<head>
+<meta charset="utf-8">
+<title>form patients</title>
+</head>
+<body>
+
+	<div layout:fragment="pageContent">
+
+
+		<div class="container mt-5">
+			<div class="card">
+
+
+				<div class="card-header">Modifier un patient</div>
+				<div class="card-body">
+
+					<form th:action=@{updatePatient} method="post">
+					<input type="hidden" name="id" class="form-control" th:value="${patient.id}">
+						<div class="form-group">
+							<label class="control-label">Name</label> <input type="text"
+								name="name" class="form-control" th:value="${patient.name}">
+							<span class="text-danger" th:errors=${patient.name}></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Score</label> <input type="text"
+								name="score" class="form-control" th:value="${patient.score}">
+							<span class="text-danger" th:errors=${patient.score}></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Date Naissance</label> <input
+								type="date" name="dateNaissance" class="form-control"
+								th:value="${patient.dateNaissance}"> <span
+								class="text-danger" th:errors=${patient.dateNaissance}></span>
+						</div>
+						<div class="form-group">
+							<label class="control-label">Malade</label> <input
+								type="checkbox" name="malade" th:checked="${patient.malade}">
+							<span class="text-danger" th:errors=${patient.malade}></span>
+						</div>
+						<button class="btn btn-success" type="submit">Modifier</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+</body>
+</html>

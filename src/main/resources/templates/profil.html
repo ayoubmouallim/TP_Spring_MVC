@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns:layout="http://ultraq.net.nz/thypeLeaf/Layout"
+	layout:decorator="template1">
+<head>
+<meta charset="utf-8">
+<title>profil</title>
+
+</head>
+<body>
+	<div layout:fragment="pageContent">
+
+
+		<div class="container mt-5">
+
+			<div class="row">
+				<div class="col-md-6 offset-md-4">
+					<div class="card" style="width: 18rem;">
+						<img class="card-img-top" src="img_avatar3.png" alt="Card image cap">
+						<div class="card-body">
+							<p class="card-text">Nom : <span sec:authentication="name"  /></p>
+							<p class="card-text">Password : ***********</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
